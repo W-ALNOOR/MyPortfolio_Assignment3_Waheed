@@ -15,7 +15,9 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
     "dev:server": "nodemon server.js",
-    "dev:client": "npm --prefix client run dev"
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
