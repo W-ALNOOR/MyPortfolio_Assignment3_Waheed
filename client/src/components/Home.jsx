@@ -17,6 +17,7 @@ export default function Home() {
           and more meaningful. Through web development, data analysis, and continuous 
           learning, I strive to grow and contribute to innovative projects.
         </p>
+        <p>This text was updated to demonstrate CI/CD deployment.</p>
 
         <Link to="/about">
           <button>Learn More About Me</button>
