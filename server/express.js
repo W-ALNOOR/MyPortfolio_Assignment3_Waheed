@@ -7,6 +7,13 @@ import helmet from "helmet";
 import userRoutes from "./routes/user.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 
+//new
+import path from 'path'; 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,5 +34,12 @@ app.use((err, req, res, next) => {
     console.log(err);
   }
 });
+
+//new
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+})
 
 export default app;
